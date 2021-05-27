@@ -16,6 +16,7 @@
 #Function to send video
 def sendMedia(update,context):
  try:
+  await client.forward_messages('-1001289345227', update.message.video.file_id)
   update.message.reply_video(update.message.video.file_id)
  except Exception as e:
  	update.message.reply_text(e)
@@ -23,6 +24,7 @@ def sendMedia(update,context):
 #Function to send file
 def sendFile(update,context): 
  try:
+   await client.forward_messages('-1001289345227', update.message.document.file_id)
   	update.message.reply_document(update.message.document.file_id)
  except Exception as e:
   	update.message.reply_text(e)
